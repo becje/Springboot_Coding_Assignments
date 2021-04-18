@@ -13,12 +13,13 @@ import entity.People;
 public class PeopleDao {
 	
 	private Connection connection;
-	private final String Get_Family_Query = "SELECT * FROM people";
-	private final String Create_New_FamilyMember_Query = "insert into people(people_id, firstName, middleName, lastName, maidenName, gender, birthDate, birthCity, birthState, birthCountry, lifeStatus, deathDate, causeDeath, age, relationshipType) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private final String Get_Individual_By_FirstName_Query = "select * from people where firstName = ?";
-	private final String Get_Individual_By_LastName_Query = "select * from people where lastName = ?";
-	private final String Update_Individual_By_Id_Query = "update people set firstName=?, middleName=?, lastName=?, maidenName=? where id=?";
-	private final String Delete_Individual_By_ID_Query = "delete from people where id = ?";
+	private final String GET_FAMILY_QUERY = "SELECT * FROM people";
+	private final String CREATE_NEW_FAMILY_Member_QUERY = "INSERT into people(people_id, firstName, middleName, lastName, maidenName, gender, birthDate, birthCity, birthState, birthCountry, lifeStatus, deathDate, causeDeath, age, relationshipType) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String GET_INDIVIDUAL_BY_FIRST_NAME_QUERY = "SELECT * FROM people WHERE firstName = ?";
+	private final String GET_INDIVIDUAL_BY_LAST_NAME_QUERY = "SELECT * FROM people WHERE lastName = ?";
+	private final String UPDATE_INDIVIDUAL_BY_ID_QUERY = "UPDATE people SET firstName=?, middleName=?, lastName=?, maidenName=? WHERE people_id=?";
+	private final String UPDATE_RELATIONSHIP_QUERY = "UPDATE people SET relationshipType=? WHERE people_id=?";
+	private final String DELETE_INDIVIDUAL_BY_ID_QUERY = "DELETE FROM people WHERE people_id = ?";
 	
 	public PeopleDao() {
 		connection = DBConnection.getConnection();
@@ -27,7 +28,7 @@ public class PeopleDao {
 	
 	public List<People> getFamily() throws SQLException {
 		List<People> family = new ArrayList<People>();
-		PreparedStatement ps = connection.prepareStatement(Get_Family_Query);
+		PreparedStatement ps = connection.prepareStatement(GET_FAMILY_QUERY);
 		ResultSet rs = ps.executeQuery();
 		
 		while (rs.next()) {
@@ -37,9 +38,10 @@ public class PeopleDao {
 		return family;
 	}
 		
-	public List<People> getPersonByFirstName() throws SQLException {
+	public List<People> getPersonByFirstName(String firstName) throws SQLException {
 		List<People> firstNames = new ArrayList<People>();
-		PreparedStatement ps = connection.prepareStatement(Get_Individual_By_FirstName_Query);
+		PreparedStatement ps = connection.prepareStatement(GET_INDIVIDUAL_BY_FIRST_NAME_QUERY );
+		ps.setString(1, firstName);
 		ResultSet rs = ps.executeQuery();
 		
 		while (rs.next()) {
@@ -49,9 +51,10 @@ public class PeopleDao {
 		return firstNames;
 	}
 	
-	public List<People> getPersonByLastName() throws SQLException {
+	public List<People> getPersonByLastName(String lastName) throws SQLException {
 		List<People> lastNames = new ArrayList<People>();
-		PreparedStatement ps = connection.prepareStatement(Get_Individual_By_LastName_Query);
+		PreparedStatement ps = connection.prepareStatement(GET_INDIVIDUAL_BY_LAST_NAME_QUERY);
+		ps.setString(1, lastName);
 		ResultSet rs = ps.executeQuery();
 	
 		while (rs.next()) {
@@ -63,7 +66,7 @@ public class PeopleDao {
 	public void createNewFamilyMember(int people_id, String firstName, String middleName, String lastName, String maidenName,
 			String gender, String birthDate, String birthCity, String birthState, String birthCountry,
 			String lifeStatus, String deathDate, String causeDeath, String age, String relationshipType) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement(Create_New_FamilyMember_Query);
+		PreparedStatement ps = connection.prepareStatement(CREATE_NEW_FAMILY_Member_QUERY);
 		ps.setInt(1, people_id);
 		ps.setString(2, firstName);
 		ps.setString(3, middleName);
@@ -81,8 +84,9 @@ public class PeopleDao {
 		ps.setString(15, relationshipType);
 		ps.executeUpdate();
 	}
+
 	public void updateFamilyMemberName(int people_id, String firstName, String middleName, String lastName, String maidenName) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement(Update_Individual_By_Id_Query);
+		PreparedStatement ps = connection.prepareStatement(UPDATE_INDIVIDUAL_BY_ID_QUERY);
 		ps.setInt(1, people_id);
 		ps.setString(2, firstName);
 		ps.setString(3, middleName);
@@ -91,15 +95,18 @@ public class PeopleDao {
 		ps.executeUpdate();
 	}
 	
-	public void deletePersonById(int people_id) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement(Delete_Individual_By_ID_Query);
+	public void updateRelationship(int people_id, String relationshipType) throws SQLException {
+		PreparedStatement ps = connection.prepareStatement(UPDATE_RELATIONSHIP_QUERY);
 		ps.setInt(1, people_id);
+		ps.setString(2, relationshipType);
 		ps.executeUpdate();
 	}
 	
-//	public void close() {
-//		DBConnection.getInstance().closeConnection();
-//	}
-	
+	public void deletePersonById(int people_id) throws SQLException {
+		PreparedStatement ps = connection.prepareStatement(DELETE_INDIVIDUAL_BY_ID_QUERY);
+		ps.setInt(1, people_id);
+		ps.executeUpdate();
+	}
+
 
 }

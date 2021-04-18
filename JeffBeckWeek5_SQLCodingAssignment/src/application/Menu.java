@@ -18,6 +18,7 @@ public class Menu {
 			"Display Family Members by First Name",
 			"Display Family Members by Last Name",
 			"Update Family Members Name",
+			"Update Relationship Status",
 			"Delete a Family Member");
 	
 	public void start() {
@@ -36,9 +37,11 @@ public class Menu {
 					lookUpPersonByFirstName();
 				} else if (selection.equals("4")) {
 					lookUpPersonByLasttName();
-				} else if (selection.equals("6")) {
-					updateFamilyMemberName();
 				} else if (selection.equals("5")) {
+					updateFamilyMemberName();
+				} else if (selection.equals("6")) {
+					updateRelationship();
+				} else if (selection.equals("7")) {
 					deleteFamilyMember();
 				}
 			} catch (SQLException e) {
@@ -57,7 +60,7 @@ public class Menu {
 		}
 	}
 		private void createNewFamilyMember() throws SQLException {			
-			System.out.println("Enter a numberical unique ID for the new family member: ");
+			System.out.println("Enter a numerical unique ID for the new family member: ");
 			int people_id = Integer.parseInt(scanner.nextLine());
 			System.out.println("Enter first name of new family member: ");
 			String firstName = scanner.nextLine();
@@ -111,48 +114,72 @@ public class Menu {
 					person.getRelationshipType());
 			}
 		}
+		
 		private void lookUpPersonByFirstName() throws SQLException {
-			List<People> firstNames = peopleDao.getPersonByFirstName();
-			for (People fName : firstNames) {
+			System.out.println("Type in a first name to show all family members with the same first name: ");
+			String firstNames = scanner.nextLine();
+			List<People> fName = peopleDao.getPersonByFirstName(firstNames);
+			for (People p : fName) {
 				System.out.println(
-					fName.getPeopleId() + ": " + " - Name: " +
-					fName.getFirstName() + " " +
-					fName.getMiddleName() + " " +  
-					fName.getLastName() + " " + 
-					fName.getMaidenName() + " " + "\n - Gender: " +
-					fName.getGender() + " " + "\n - Birthday: " +  
-					fName.getBirthDate() + " " + "\n - City of Birth: " +
-					fName.getBirthCity() + " " + "\n - State of Birth: " +
-					fName.getBirthState() + " " + "\n - Country of Birth: " +
-					fName.getBirthCountry() + " " + "\n - Decease or Living: " + 
-					fName.getLifeStatus() + " " + "\n - Date of Death: " +
-					fName.getDeathDate() + " " + "\n - Cause of Death: " +
-					fName.getCauseDeath() + " " + "\n - Age: " +
-					fName.getAge() + " " + "\n - Relationship: " +
-					fName.getRelationshipType());
+					p.getPeopleId() + ": " + " - Name: " +
+					p.getFirstName() + " " +
+					p.getMiddleName() + " " +  
+					p.getLastName() + " " + 
+					p.getMaidenName() + " " + "\n - Gender: " +
+					p.getGender() + " " + "\n - Birthday: " +  
+					p.getBirthDate() + " " + "\n - City of Birth: " +
+					p.getBirthCity() + " " + "\n - State of Birth: " +
+					p.getBirthState() + " " + "\n - Country of Birth: " +
+					p.getBirthCountry() + " " + "\n - Decease or Living: " + 
+					p.getLifeStatus() + " " + "\n - Date of Death: " +
+					p.getDeathDate() + " " + "\n - Cause of Death: " +
+					p.getCauseDeath() + " " + "\n - Age: " +
+					p.getAge() + " " + "\n - Relationship: " +
+					p.getRelationshipType());
 			}
 		}
+		
 		private void lookUpPersonByLasttName() throws SQLException {
-			List<People> lastNames = peopleDao.getPersonByLastName();
-			for (People lName : lastNames) {
+			System.out.println("Type in a last name to show all family members with the same first name: ");
+			String lastNames = scanner.nextLine();
+			List<People> lName = peopleDao.getPersonByLastName(lastNames);
+			for (People p : lName) {
 				System.out.println(
-					lName.getPeopleId() + ": " + 
-					lName.getFirstName() + " " + 
-					lName.getMiddleName() + " " +  
-					lName.getLastName() + " " + 
-					lName.getMaidenName() + " " + 
-					lName.getBirthDate() + " " +
-					lName.getBirthCity() + " " +
-					lName.getBirthState() + " " +
-					lName.getBirthCountry() + " " +
-					lName.getLifeStatus() + " " +
-					lName.getDeathDate() + " " +
-					lName.getCauseDeath() + " " +
-					lName.getAge() + " " +
-					lName.getRelationshipType());
+					p.getPeopleId() + ": " + " - Name: " +
+					p.getFirstName() + " " +
+					p.getMiddleName() + " " +  
+					p.getLastName() + " " + 
+					p.getMaidenName() + " " + "\n - Gender: " +
+					p.getGender() + " " + "\n - Birthday: " +  
+					p.getBirthDate() + " " + "\n - City of Birth: " +
+					p.getBirthCity() + " " + "\n - State of Birth: " +
+					p.getBirthState() + " " + "\n - Country of Birth: " +
+					p.getBirthCountry() + " " + "\n - Decease or Living: " + 
+					p.getLifeStatus() + " " + "\n - Date of Death: " +
+					p.getDeathDate() + " " + "\n - Cause of Death: " +
+					p.getCauseDeath() + " " + "\n - Age: " +
+					p.getAge() + " " + "\n - Relationship: " +
+					p.getRelationshipType());
 			}
 		}
-
+		
+		private void updateRelationship() throws SQLException {
+			System.out.println("Enter ID of family member you wish to update: ");
+			String n1 = scanner.nextLine();
+			Integer people_id = null;
+			try {
+				people_id = Integer.parseInt(n1);
+			} catch(NumberFormatException e) {
+				System.out.println("Please enter the ID of the family member.");
+				return;
+			}
+			if (people_id !=null) {
+				System.out.println("Please update status to the Relationship: ");
+				String relationshipType = scanner.nextLine();
+				peopleDao.updateRelationship(people_id, relationshipType);
+			}
+		}
+		
 		private void updateFamilyMemberName() throws SQLException {
 			System.out.println("Enter ID of family members name you wish to update: ");
 			String n1 = scanner.nextLine();
@@ -160,29 +187,33 @@ public class Menu {
 			try {
 				people_id = Integer.parseInt(n1);
 			} catch (NumberFormatException e) {
-				System.out.println("Please enter the ID of the the family member.");
+				System.out.println("Please enter the ID of the family member.");
 				return;
 			}
 			if (people_id != null) {
-				System.out.println("Please enter the required information");
-				String firstName = scanner.nextLine();
-				String middleName = scanner.nextLine();
-				String lastName = scanner.nextLine();
-				String maidenName = scanner.nextLine();
-			if (!firstName.isEmpty() || !middleName.isEmpty() && !lastName.isEmpty() || !maidenName.isEmpty()) {
-				peopleDao.updateFamilyMemberName(people_id, firstName, middleName, lastName, maidenName);
+					System.out.println("Please update the First Name or press enter to continue: ");
+					String firstName = scanner.nextLine();
+				if (!firstName.isEmpty()) {
+					System.out.println("Please update the Middle Name or press enter to continue:  ");
+					String middleName = scanner.nextLine();
+				if (!middleName.isEmpty()) {
+					System.out.println("Please update the Last name or press enter to continue: ");
+					String lastName = scanner.nextLine();
+				if (!lastName.isEmpty()) {
+					System.out.println("Please update the Maiden Name or press enter to continue: ");
+					String maidenName = scanner.nextLine();
+				if (!maidenName.isEmpty()) {
+					peopleDao.updateFamilyMemberName(people_id, firstName, middleName, lastName, maidenName);
+					}
+				}
 			}
-		}	
+		}
 	}
-			private void deleteFamilyMember() throws SQLException {
+}
+				private void deleteFamilyMember() throws SQLException {
 				System.out.println("Enter the ID of the family member you want to delete: ");
 				int people_id = Integer.parseInt(scanner.nextLine());
 				peopleDao.deletePersonById(people_id);
 			}
 			
-//			public void end() {
-//			System.out.println("Goodbye!");
-//			scanner.close();
-//			peopleDao.close();
-//		}
 }

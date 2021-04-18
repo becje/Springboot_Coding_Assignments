@@ -12,8 +12,6 @@ public class DBConnection {
 		private static Connection connection;
 		private static DBConnection instance;
 		
-//		private static DBConnection instance = new DBConnection();
-		
 		private DBConnection(Connection connection) {
 			DBConnection.connection = connection;
 		}
@@ -31,14 +29,4 @@ public class DBConnection {
 			return connection;
 		}
 		
-//		public void closeConnection() {
-//			try {
-//				connection.close();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			} finally {
-//				connection = null;
-//			}
-//		} 
-
 }
