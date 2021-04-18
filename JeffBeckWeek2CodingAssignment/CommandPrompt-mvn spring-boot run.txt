@@ -1,0 +1,162 @@
+Microsoft Windows [Version 10.0.19042.928]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\B5 Connections>cd /d G:\Apache\maven-workplace\inventoryManagement
+
+G:\Apache\maven-workplace\inventoryManagement>mvn spring-boot:run
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------< com.promineotech:inventoryManagement >----------------
+[INFO] Building inventoryManagement 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] >>> spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) > test-compile @ inventoryManagement >>>
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ inventoryManagement ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ inventoryManagement ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ inventoryManagement ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory G:\Apache\maven-workplace\inventoryManagement\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ inventoryManagement ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] <<< spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) < test-compile @ inventoryManagement <<<
+[INFO]
+[INFO]
+[INFO] --- spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) @ inventoryManagement ---
+2021-04-18 16:28:10,204 ERROR RollingFile contains an invalid element or attribute "DefaultRolloverStategy"
+2021-04-18 16:28:10,484 ERROR RollingFile contains an invalid element or attribute "DefaultRolloverStategy"
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.6.RELEASE)
+
+2021-04-18 04:28:10.599  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] c.p.i.App                                : Starting App on DESKTOP-JEFFB with PID 22868 (G:\Apache\maven-workplace\inventoryManagement\target\classes started by B5 Connections in G:\Apache\maven-workplace\inventoryManagement)
+2021-04-18 04:28:10.633  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@344503d2: startup date [Sun Apr 18 16:28:10 CDT 2021]; root of context hierarchy
+2021-04-18 04:28:11.283  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2021-04-18 04:28:11.751  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 5.1.3.Final
+2021-04-18 04:28:11.913  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d89af246] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-18 04:28:11.937  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-18 04:28:11.949  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-18 04:28:11.959  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-18 04:28:12.651  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2021-04-18 04:28:12.853  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.a.c.c.StandardService                  : Starting service Tomcat
+2021-04-18 04:28:12.860  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.0.26
+2021-04-18 04:28:12.959  INFO DESKTOP-JEFFB
+                        ---[ost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-18 04:28:12.965  INFO DESKTOP-JEFFB
+                        ---[ost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 2335 ms
+2021-04-18 04:28:13.620  INFO DESKTOP-JEFFB
+                        ---[ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2021-04-18 04:28:13.629  INFO DESKTOP-JEFFB
+                        ---[ost-startStop-1] o.s.b.c.e.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-04-18 04:28:13.630  INFO DESKTOP-JEFFB
+                        ---[ost-startStop-1] o.s.b.c.e.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-04-18 04:28:13.852  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-04-18 04:28:13.870  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+        name: default
+        ...]
+2021-04-18 04:28:13.955  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.Version                              : HHH000412: Hibernate Core {4.3.11.Final}
+2021-04-18 04:28:13.963  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2021-04-18 04:28:13.966  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.c.Environment                        : HHH000021: Bytecode provider name : javassist
+2021-04-18 04:28:14.123  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2021-04-18 04:28:15.370  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-18 04:28:15.560  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2021-04-18 04:28:15.919  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.t.h.SchemaExport                     : HHH000227: Running hbm2ddl schema export
+Hibernate: alter table customer drop foreign key FK_r8whbd0mf9er6vwfr0sclsxkd
+Hibernate: alter table orders drop foreign key FK_astys1dv61mdlp0n0wx0574r2
+Hibernate: alter table product_order drop foreign key FK_sf5yp37b7qt63qqoq25f82lpu
+Hibernate: alter table product_order drop foreign key FK_5uw5nxqovigv7mf1gmbos1rl8
+Hibernate: drop table if exists address
+Hibernate: drop table if exists customer
+Hibernate: drop table if exists orders
+Hibernate: drop table if exists product
+Hibernate: drop table if exists product_order
+Hibernate: create table address (id bigint not null auto_increment, city varchar(255), state varchar(255), street varchar(255), zip varchar(255), primary key (id))
+Hibernate: create table customer (id bigint not null auto_increment, first_name varchar(255), last_name varchar(255), level integer, address_id bigint, primary key (id))
+Hibernate: create table orders (id bigint not null auto_increment, delivered date, estimated_delivery date, invoice_amount double precision not null, ordered date, status integer, customer_id bigint, primary key (id))
+Hibernate: create table product (id bigint not null auto_increment, description varchar(255), name varchar(255), price double precision not null, primary key (id))
+Hibernate: create table product_order (product_id bigint not null, order_id bigint not null, primary key (product_id, order_id))
+Hibernate: alter table customer add constraint FK_r8whbd0mf9er6vwfr0sclsxkd foreign key (address_id) references address (id)
+Hibernate: alter table orders add constraint FK_astys1dv61mdlp0n0wx0574r2 foreign key (customer_id) references customer (id)
+Hibernate: alter table product_order add constraint FK_sf5yp37b7qt63qqoq25f82lpu foreign key (order_id) references orders (id)
+Hibernate: alter table product_order add constraint FK_5uw5nxqovigv7mf1gmbos1rl8 foreign key (product_id) references product (id)
+2021-04-18 04:28:28.348  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.h.t.h.SchemaExport                     : HHH000230: Schema export complete
+2021-04-18 04:28:28.803  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@344503d2: startup date [Sun Apr 18 16:28:10 CDT 2021]; root of context hierarchy
+2021-04-18 04:28:29.157  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.CustomerController.createCustomer(com.promineotech.inventoryManagement.entity.Customer)
+2021-04-18 04:28:29.164  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.CustomerController.updateCustomer(com.promineotech.inventoryManagement.entity.Customer,java.lang.Long)
+2021-04-18 04:28:29.166  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.CustomerController.deleteCustomer(java.lang.Long)
+2021-04-18 04:28:29.168  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.CustomerController.getCustomer(java.lang.Long)
+2021-04-18 04:28:29.171  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.CustomerController.getCustomer()
+2021-04-18 04:28:29.179  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/{id}/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.OrderController.createCustomer(java.util.Set<java.lang.Long>,java.lang.Long)
+2021-04-18 04:28:29.181  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/{id}/orders/{orderId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.OrderController.updateOrder(com.promineotech.inventoryManagement.entity.Order,java.lang.Long)
+2021-04-18 04:28:29.183  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.ProductController.getProducts()
+2021-04-18 04:28:29.184  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.ProductController.deleteProduct(java.lang.Long)
+2021-04-18 04:28:29.193  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.ProductController.updateProduct(com.promineotech.inventoryManagement.entity.Product,java.lang.Long)
+2021-04-18 04:28:29.196  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.promineotech.inventoryManagement.controller.ProductController.createProduct(com.promineotech.inventoryManagement.entity.Product)
+2021-04-18 04:28:29.198  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-04-18 04:28:29.200  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2021-04-18 04:28:29.243  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-04-18 04:28:29.250  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-04-18 04:28:29.296  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-04-18 04:28:29.460  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-04-18 04:28:29.497  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-18 04:28:29.510  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-18 04:28:29.525  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] o.a.t.u.n.NioSelectorPool                : Using a shared selector for servlet write/read
+2021-04-18 04:28:29.549  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2021-04-18 04:28:29.554  INFO DESKTOP-JEFFB
+                        ---[ment.App.main()] c.p.i.App                                : Started App in 19.199 seconds (JVM running for 23.238)
