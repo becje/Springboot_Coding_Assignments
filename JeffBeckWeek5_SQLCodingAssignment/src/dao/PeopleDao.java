@@ -18,7 +18,8 @@ public class PeopleDao {
 	private final String GET_INDIVIDUAL_BY_FIRST_NAME_QUERY = "SELECT * FROM people WHERE firstName = ?";
 	private final String GET_INDIVIDUAL_BY_LAST_NAME_QUERY = "SELECT * FROM people WHERE lastName = ?";
 	private final String UPDATE_INDIVIDUAL_BY_ID_QUERY = "UPDATE people SET firstName=?, middleName=?, lastName=?, maidenName=? WHERE people_id=?";
-	private final String UPDATE_RELATIONSHIP_QUERY = "UPDATE people SET relationshipType=? WHERE people_id=?";
+	private final String UPDATE_RELATIONSHIP_QUERY = "UPDATE people SET (relationshipType) WHERE people_id = (people_id) VALUES (?,?)";
+	//private final String UPDATE_RELATIONSHIP_QUERY = "UPDATE people SET relationshipType=? WHERE people_id=?";
 	private final String DELETE_INDIVIDUAL_BY_ID_QUERY = "DELETE FROM people WHERE people_id = ?";
 	
 	public PeopleDao() {
